@@ -1,21 +1,34 @@
 <template>
-  <p>
-    I am a custom component provided by your plugin, you can delete me if you wish.
-    This is a value from instance:
-    <b>{{ $vuiSelect.world() }}</b>
-    <!-- <button @click="increment()">increment ({{ counter }})</button> -->
-  </p>
+  <div class="vui-select">
+    <select v-model="selected" class="hidden">
+      <option v-for="(item, i) in items"
+              :key="`item-${i}`"
+              :value="item">
+      </option>
+    </select>
+    <div v-show="!isOpened" class="vui-select-container"
+        @click="openSelect()"
+    >
+      <slot name="vui-select-match" :selected="selected">&nbsp;</slot>
+    </div>
+    <input v-model="searchText"
+          v-show="isOpened"
+          class="vui-select-search"
+          ref="selectSearch"
+          @input="onSearch($event)"
+    >
+    <div class="vui-select-options" v-show="isOpened">
+      <div v-for="(item, i) in searchItems"
+          :key="`item-${i}`"
+          :value="item"
+          @click="selectItem(item)"
+          class="vui-select-option"
+      >
+        <slot :name="`vui-select-options`"  :item="item"></slot>
+      </div>
+    </div>
+  </div>
 </template>
 
-<script>
-// import { mapActions, mapGetters } from 'vuex';
-
-// export default {
-//   computed: {
-//     ...mapGetters('counterStore', ['counter'])
-//   },
-//   methods: {
-//     ...mapActions('counterStore', ['increment'])
-//   }
-// };
-</script>
+<script async lang="js" src="./vui-select-component.js"></script>
+<style scoped lang="less" src="./vui-select-component.less"></style>
