@@ -1,20 +1,20 @@
 import { devMode, registerVuexStore } from './utils';
 
 // Import your additional components here
-import VuiSelectComponent from './vui-select-component.vue';
+import UiVueSelectComponent from './ui-vue-select-component.vue';
 
-export default class VuiSelect {
+export default class UiVueSelect {
   // HERE IS YOUR PLACE TO DEVELOP YOUR COMPONENT
 
   constructor(options = {}) {
     const defaults = {
       // This is your plugin's options. It will be accessible with this.options
-      accessorName: '$vuiSelect'
+      accessorName: '$uiVueSelect'
     };
     this.options = { ...defaults, ...options };
   }
 
-  // Some instance methods that you can access from this.$vuiSelect
+  // Some instance methods that you can access from this.$uiVueSelect
   world() {
     return 'world';
   }
@@ -25,7 +25,7 @@ export default class VuiSelect {
     // You can use `this.options` property to access options.
 
     // Delete this line if your plug-in doesn't provide any components
-    Vue.component('VuiSelect', VuiSelectComponent);
+    Vue.component('UiVueSelect', UiVueSelectComponent);
 
     // Vue.directive('your-custom-directive', customDirective);
 
@@ -61,7 +61,7 @@ export default class VuiSelect {
   init(Vue, store) {
     if (devMode() && !install.installed) {
       console.warn(
-        `[vui-select] not installed. Make sure to call \`Vue.use(VuiSelect)\` before init root instance.`
+        `[ui-vue-select] not installed. Make sure to call \`Vue.use(UiVueSelect)\` before init root instance.`
       );
     }
 
@@ -69,7 +69,7 @@ export default class VuiSelect {
       return;
     }
 
-    VuiSelect.register(Vue, this.options, store);
+    UiVueSelect.register(Vue, this.options, store);
     this.initialized = true;
   }
 }
@@ -79,7 +79,7 @@ export function install(Vue) {
   if (install.installed && Vue) {
     if (isDev) {
       console.warn(
-        '[vui-select] already installed. Vue.use(VuiSelect) should be called only once.'
+        '[ui-vue-select] already installed. Vue.use(UiVueSelect) should be called only once.'
       );
     }
     return;
@@ -87,38 +87,38 @@ export function install(Vue) {
 
   Vue.mixin({
     /**
-     * VuiSelect init hook, injected into each instances init hooks list.
+     * UiVueSelect init hook, injected into each instances init hooks list.
      */
     beforeCreate() {
-      const { vuiSelectSettings, store, parent } = this.$options;
+      const { uiVueSelectSettings, store, parent } = this.$options;
 
       let instance = null;
-      if (vuiSelectSettings) {
+      if (uiVueSelectSettings) {
         instance =
-          typeof vuiSelectSettings === 'function'
-            ? new vuiSelectSettings()
-            : new VuiSelect(vuiSelectSettings);
+          typeof uiVueSelectSettings === 'function'
+            ? new uiVueSelectSettings()
+            : new UiVueSelect(uiVueSelectSettings);
         // Inject store
         instance.init(Vue, store);
-      } else if (parent && parent.__$VuiSelectInstance) {
-        instance = parent.__$VuiSelectInstance;
+      } else if (parent && parent.__$UiVueSelectInstance) {
+        instance = parent.__$UiVueSelectInstance;
         instance.init(Vue, parent.$store);
       }
 
       if (instance) {
         // Store helper for internal use
-        this.__$VuiSelectInstance = instance;
+        this.__$UiVueSelectInstance = instance;
         this[instance.options.accessorName] = instance;
       }
     },
 
-    ...VuiSelect.mixin()
+    ...UiVueSelect.mixin()
   });
 
   install.installed = true;
   if (isDev) {
-    console.info('[vui-select] is plugged in.');
+    console.info('[ui-vue-select] is plugged in.');
   }
 }
 
-VuiSelect.install = install;
+UiVueSelect.install = install;

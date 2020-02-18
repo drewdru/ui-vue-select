@@ -1,8 +1,8 @@
 import Vue, { PluginFunction } from 'vue';
 // import { Store } from 'vuex';
 
-export class VuiSelect {
-  constructor(options?: VuiSelectOptions);
+export class UiVueSelect {
+  constructor(options?: UiVueSelectOptions);
 
   static install(): PluginFunction<any>;
   // static init(Vue: Vue, store: Store<any>): void;
@@ -12,19 +12,19 @@ export class VuiSelect {
   world(): string;
 }
 
-export interface VuiSelectOptions extends Object {
+export interface UiVueSelectOptions extends Object {
   accessorName?: string
 }
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $vuiSelect: VuiSelect;
-    __$VuiSelectInstance: VuiSelect;
+    $uiVueSelect: UiVueSelect;
+    __$UiVueSelectInstance: UiVueSelect;
   }
 }
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
-    vuiSelectSettings?: VuiSelectOptions | VuiSelect
+    uiVueSelectSettings?: UiVueSelectOptions | UiVueSelect
   }
 }

@@ -1,9 +1,9 @@
 {
-  "name": "vui-select",
+  "name": "ui-vue-select",
   "version": "0.1.1",
   "private": false,
   "description": "Vue select plugin",
-  "main": "dist/vui-select.js",
+  "main": "dist/ui-vue-select.js",
   "types": "src/types/index.d.ts",
   "files": [
     "dist",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drewdru/vui-select.git"
+    "url": "git+https://github.com/drewdru/ui-vue-select.git"
   },
   "keywords": [
     "vue",
@@ -39,9 +39,9 @@
   "author": "Drew Dru <drew.drux@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/drewdru/vui-select/issues"
+    "url": "https://github.com/drewdru/ui-vue-select/issues"
   },
-  "homepage": "https://github.com/drewdru/vui-select#readme",
+  "homepage": "https://github.com/drewdru/ui-vue-select#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",

@@ -3,18 +3,18 @@
   <div class="layout">
     <div class="form">
       <div class="form-group">
-        <vui-select :items="languages" :searchKeys="['title']" :required="true">
-          <template #vui-select-match="props">
+        <ui-vue-select :items="languages" :searchKeys="['title']" :required="true">
+          <template #ui-vue-select-match="props">
             <!-- <flag :iso="props.selected.flag"></flag> -->
             <span>{{props.selected.flag}}</span>
             <span>&nbsp;{{props.selected.title}}</span>
           </template>
-          <template #vui-select-options="props">
+          <template #ui-vue-select-options="props">
             <!-- <flag :iso="props.item.flag"></flag> -->
             <span>{{props.item.flag}}</span>
             <span>&nbsp;{{props.item.title}}</span>
           </template>
-        </vui-select>
+        </ui-vue-select>
       </div>
     </div>
   </div>

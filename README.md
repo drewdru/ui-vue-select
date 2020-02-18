@@ -1,4 +1,4 @@
-# VuiSelect
+# UiVueSelect
 
 Your plugin description...
 
@@ -6,20 +6,20 @@ Your plugin description...
 
 ### 1. Install
 ```
-yarn add vui-select
+yarn add ui-vue-select
 # or
-npm i vui-select --save
+npm i ui-vue-select --save
 ```
 
 ### 2. Plug-in
 ```js
-import VuiSelect from 'vui-select'
+import UiVueSelect from 'ui-vue-select'
 
-Vue.use(VuiSelect)
+Vue.use(UiVueSelect)
 
 new Vue({
   // your vue config
-  vuiSelectSettings: new VuiSelect(),
+  uiVueSelectSettings: new UiVueSelect(),
 })
 ```
 
@@ -27,16 +27,16 @@ new Vue({
 
 ```vue
 <template>
-  <vui-select :items="languages" :searchKeys="['title']">
-    <template #vui-select-match="props">
+  <ui-vue-select :items="languages" :searchKeys="['title']">
+    <template #ui-vue-select-match="props">
       <flag :iso="props.selected.flag"></flag>
       <span>&nbsp;{{props.selected.title}}</span>
     </template>
-    <template #vui-select-options="props">
+    <template #ui-vue-select-options="props">
       <flag :iso="props.item.flag"></flag>
       <span>&nbsp;{{props.item.title}}</span>
     </template>
-  </vui-select>
+  </ui-vue-select>
 </template>
 
 <script>
@@ -50,7 +50,7 @@ new Vue({
       }
     }
     async created() {
-      console.log(this.$vuiSelect);
+      console.log(this.$uiVueSelect);
     },
   };
 </script>

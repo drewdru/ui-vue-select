@@ -2,11 +2,11 @@ const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   mode: process.env.NODE_ENV,
-  entry: ['./src/vui-select.js'],
+  entry: ['./src/ui-vue-select.js'],
   output: {
-    library: 'VuiSelect',
+    library: 'UiVueSelect',
     libraryTarget: 'umd',
-    filename: 'vui-select.js',
+    filename: 'ui-vue-select.js',
     globalObject: "typeof self !== 'undefined' ? self : this"
   },
   module: {
