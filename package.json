@@ -1,6 +1,7 @@
 {
   "name": "vui-select",
-  "version": "0.0.1",
+  "version": "0.1.1",
+  "private": false,
   "description": "Vue select plugin",
   "main": "dist/vui-select.js",
   "types": "src/types/index.d.ts",
@@ -11,7 +12,6 @@
   ],
   "scripts": {
     "test": "exit 0;",
-    "storybook": "start-storybook",
     "precommit": "lint-staged",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "example:selectLanguage": "poi -s examples/selectLanguage/index.js"
@@ -47,8 +47,6 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "@storybook/addon-notes": "^5.1.10",
-    "@storybook/vue": "^5.1.10",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
     "cross-env": "^5.2.0",
@@ -56,10 +54,11 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^3.0.2",
-    "less": "^3.0.4",
+    "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.2.1",
     "poi": "^12.7.1",
+    "postcss-loader": "^3.0.0",
     "prettier": "^1.18.2",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue": "^2.6.10",
