@@ -16,6 +16,10 @@ export default class UiVueSelect {
 
   static mixin = () => ({});
 
+  ////////////////////////////////////
+  // YOU MAY NOT NEED TO EDIT BELOW //
+  ////////////////////////////////////
+
   initialized = false;
 
   init(Vue, store) {
@@ -46,13 +50,16 @@ export function install(Vue) {
   }
 
   Vue.mixin({
+    /**
+     * UiVueSelect init hook, injected into each instances init hooks list.
+     */
     beforeCreate() {
-      const { UiVueSelect, store, parent } = this.$options;
+      const { uiVueSelect, store, parent } = this.$options;
 
       let instance = null;
-      if (UiVueSelect) {
+      if (uiVueSelect) {
         instance =
-          typeof UiVueSelect === 'function' ? new UiVueSelect() : new UiVueSelect(UiVueSelect);
+          typeof uiVueSelect === 'function' ? new uiVueSelect() : new UiVueSelect(uiVueSelect);
         // Inject store
         instance.init(Vue, store);
       } else if (parent && parent.__$UiVueSelectInstance) {

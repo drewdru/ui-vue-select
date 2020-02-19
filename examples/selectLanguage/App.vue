@@ -28,7 +28,6 @@ export default {
         {locale: 'en', flag: 'us', title: 'English'},
         {locale: 'ru', flag: 'ru', title: 'Russian'},
       ],
-      msg: 'world'
     };
   }
 };

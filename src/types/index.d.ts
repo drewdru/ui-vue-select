@@ -1,13 +1,12 @@
 import Vue, { PluginFunction } from 'vue';
+import { Store } from 'vuex';
 
 export class UiVueSelect {
   constructor(options?: UiVueSelectOptions);
 
   static install(): PluginFunction<any>;
-  static init(Vue: Vue): void;
-
-  // Your instance methods
-  world(): string;
+  static init(Vue: Vue, store: Store<any>): void;
+  static init(Vue: Vue, store: any): void;
 }
 
 export interface UiVueSelectOptions extends Object {
@@ -23,6 +22,6 @@ declare module 'vue/types/vue' {
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
-    UiVueSelect?: UiVueSelectOptions | UiVueSelect
+    uiVueSelect?: UiVueSelectOptions | UiVueSelect
   }
 }
