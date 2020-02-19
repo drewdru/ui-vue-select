@@ -18,9 +18,7 @@ export default class UiVueSelect {
     Vue.component('UiVueSelect', UiVueSelectComponent);
   };
 
-  ////////////////////////////////////
-  // YOU MAY NOT NEED TO EDIT BELOW //
-  ////////////////////////////////////
+  static mixin = () => ({});
 
   initialized = false;
 

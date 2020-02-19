@@ -1,6 +1,6 @@
 {
   "name": "ui-vue-select",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "description": "Vue select plugin",
   "main": "dist/ui-vue-select.js",
