@@ -19,7 +19,7 @@ Vue.use(UiVueSelect)
 
 new Vue({
   // your vue config
-  uiVueSelectSettings: new UiVueSelect(),
+  UiVueSelect: UiVueSelect,
 })
 ```
 

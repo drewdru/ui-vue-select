@@ -10,6 +10,6 @@ Vue.use(UiVueSelect);
 new Vue({
   el: '#app',
   store: new Vuex.Store(),
-  uiVueSelectSettings: new UiVueSelect(),
+  UiVueSelect,
   render: createElement => createElement(App)
 });

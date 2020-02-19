@@ -23,6 +23,6 @@ declare module 'vue/types/vue' {
 
 declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
-    uiVueSelectSettings?: UiVueSelectOptions | UiVueSelect
+    UiVueSelect?: UiVueSelectOptions | UiVueSelect
   }
 }
