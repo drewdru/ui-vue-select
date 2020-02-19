@@ -1,6 +1,6 @@
 # UiVueSelect
 
-Your plugin description...
+Custom select for Vue.js
 
 ## Installation
 

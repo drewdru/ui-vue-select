@@ -1,6 +1,6 @@
 {
   "name": "ui-vue-select",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "description": "Vue select plugin",
   "main": "dist/ui-vue-select.js",
@@ -32,9 +32,7 @@
   },
   "keywords": [
     "vue",
-    "querystring",
-    "state",
-    "sync"
+    "custom-vue-select"
   ],
   "author": "Drew Dru <drew.drux@gmail.com>",
   "license": "MIT",
