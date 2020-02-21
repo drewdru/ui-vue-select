@@ -18,7 +18,7 @@
           </template>
           
           <!-- YOU COULD CHANGE ui-vue-select-match-open
-              Search still will work with this example:
+              Search will work with this example:
           -->
           <!-- <template #ui-vue-select-match-open="props">
             <span>{{props.selected.flag}}</span>
@@ -38,9 +38,9 @@
           </template>
         </ui-vue-select>
         <ui-vue-select
-          v-model="languageSet"
-          :id="`languageSet`"
-          :name="`languageSet`"
+          v-model="selectedLanguages"
+          :id="`selectedLanguages`"
+          :name="`selectedLanguages`"
           :items="languages"
           :searchKeys="['title']"
           :required="false"
@@ -83,7 +83,7 @@ export default {
         {locale: 'sp', flag: 'sp', title: 'Spanish'},
       ],
       language: undefined,
-      languageSet: undefined,
+      selectedLanguages: undefined,
     };
   }
 };
