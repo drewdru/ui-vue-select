@@ -1,67 +1,76 @@
 .ui-vue-select {
   position: relative;
   .hidden {
-      display: none;
+    display: none;
   }
   .ui-vue-select-search {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      border: 1px solid var(--shadow, #2c3e507F);
-      box-shadow: inset 0 0 1px var(--shadow, #2c3e507F);
-      background-color: var(--control, #ffffff);
-      color: var(--control-text, #2c3e50);
-      margin: 0;
-      padding: 10px;
-      border-radius: 4px;
-      width: 100%;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid var(--shadow, #2c3e507F);
+    box-shadow: inset 0 0 1px var(--shadow, #2c3e507F);
+    background-color: var(--control, #ffffff);
+    color: var(--control-text, #2c3e50);
+    margin: 0;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .ui-vue-select-container {
-      border: 1px solid var(--shadow, #2c3e507F);
-      box-shadow: inset 0 0 1px var(--shadow, #2c3e507F);
-      border-radius: 4px;
-      background-color: var(--control, #ffffff);
-      color: var(--control-text, #2c3e50);
-      box-sizing: border-box;
-      padding: 10px;
-      cursor: pointer;
+    border: 1px solid var(--shadow, #2c3e507F);
+    box-shadow: inset 0 0 1px var(--shadow, #2c3e507F);
+    border-radius: 4px;
+    background-color: var(--control, #ffffff);
+    color: var(--control-text, #2c3e50);
+    box-sizing: border-box;
+    padding: 10px;
+    cursor: pointer;
 
-      overflow-x: auto;
-      white-space: nowrap;
-      -ms-overflow-style: none;
-      -moz-overflow-style: none;
-      &::-webkit-scrollbar {
-          display: none;
-      }
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    -moz-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .ui-vue-select-options {
-      width: 100%;
-      width: -moz-available;
-      width: -webkit-fill-available;
-      width: fill-available;
-      width: stretch;
-      position: absolute;
-      background-color: white;
-      border: solid 1px var(--shadow, #2c3e507F);
-      box-shadow: var(--shadow, #2c3e507F);
+    z-index: 9;
+    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    width: stretch;
+    position: absolute;
+    background-color: white;
+    border: solid 1px var(--shadow, #2c3e507F);
+    box-shadow: var(--shadow, #2c3e507F);
+    background-color: var(--control, #ffffff);
+    color: var(--control-text, #2c3e50);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow-y: auto;
+    max-height: 120px;
+    max-width: stretch;
+    .ui-vue-select-option {
+      padding: 5px;
+      cursor: pointer;
       background-color: var(--control, #ffffff);
       color: var(--control-text, #2c3e50);
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-      overflow-y: auto;
-      max-height: 120px;
-      max-width: stretch;
-      .ui-vue-select-option {
-          padding: 5px;
-          cursor: pointer;
-          background-color: var(--control, #ffffff);
-          color: var(--control-text, #2c3e50);
-          &:hover {
-              background-color: var(--accent, #82B1FF);
-              color: var(--accent-text, #043381);
-          }
+      &:hover {
+        background-color: var(--accent, #82B1FF);
+        color: var(--accent-text, #043381);
       }
+      &.active {
+        background-color: var(--active, #82B1FFAA);
+        color: var(--active-text, #043381AA);
+        &:hover {
+          background-color: var(--accent, #82B1FF);
+          color: var(--accent-text, #043381);
+        }
+      }
+    }
   }
 }

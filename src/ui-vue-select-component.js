@@ -1,4 +1,7 @@
 export default {
+  model: {
+    event: 'change'
+  },
   props: {
     id: {
       type: String
@@ -14,12 +17,18 @@ export default {
     },
     required: {
       type: Boolean
+    },
+    multiple: {
+      type: Boolean
+    },
+    limit: {
+      type: Number
     }
   },
   data() {
     return {
       isOpened: false,
-      selected: {},
+      selected: new Set(),
       search: null
     };
   },
@@ -92,8 +101,25 @@ export default {
       return result.filter(filter);
     },
     selectItem(item) {
-      this.selected = item;
-      this.isOpened = false;
+      if (this.multiple) {
+        if (this.selected.has(item)) {
+          // TODO: NOTIFY IF REQUIRED
+          this.selected.delete(item);
+          this.$emit('change', Array.from(this.selected));
+          this.isOpened = false;
+        } else {
+          // TODO: NOTIFY IF LIMIT
+          if (!this.limit || this.selected.size < this.limit) {
+            this.selected.add(item);
+            this.$emit('change', Array.from(this.selected));
+            this.isOpened = false;
+          }
+        }
+      } else {
+        this.selected = item;
+        this.$emit('change', this.selected);
+        this.isOpened = false;
+      }
     },
     openSelect() {
       this.isOpened = !this.isOpened;
@@ -103,11 +129,24 @@ export default {
     },
     onSearch(event) {
       this.searchText = event.target.value;
+    },
+    checkActive(item) {
+      if (this.multiple) {
+        return this.selected.has(item);
+      } else {
+        return this.selected == item;
+      }
     }
   },
   mounted() {
-    if (this.isRequired && this.items.length > 0 && Object.keys(this.selected).length === 0) {
-      this.selected = this.items[0];
+    if (this.isRequired && this.items.length > 0) {
+      if (this.multiple) {
+        this.selected = new Set([this.items[0]]);
+        this.$emit('change', Array.from(this.selected));
+      } else {
+        this.selected = this.items[0];
+        this.$emit('change', this.selected);
+      }
     }
   }
 };
