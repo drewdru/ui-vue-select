@@ -47,8 +47,7 @@ new Vue({
           {locale: 'en', flag: 'us', title: 'English'},
           {locale: 'ru', flag: 'ru', title: 'Russian'},
         ],
-        language: undefined,
-        languageSet: undefined,
+        language: {locale: 'en', flag: 'us', title: 'English'},
       }
     }
     async created() {
@@ -111,7 +110,7 @@ export default {
         {locale: 'fr', flag: 'fr', title: 'French'},
         {locale: 'sp', flag: 'sp', title: 'Spanish'},
       ],
-      selectedLanguages: undefined,
+      selectedLanguages: [{locale: 'en', flag: 'us', title: 'English'}],
     };
   }
 };

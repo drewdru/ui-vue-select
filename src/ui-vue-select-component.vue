@@ -12,6 +12,9 @@
           {{item}}
         </span>
       </slot>
+      <slot name="ui-vue-select-match-arrow">
+        <i class="arrow" :class="{ down: !isOpened, up: isOpened }"></i>
+      </slot>
     </div>
     <div v-show="isOpened">
       <slot name="ui-vue-select-match-open" :selected="selected" :onSearch="onSearch" :searchText="searchText">
@@ -21,6 +24,9 @@
           ref="selectSearch"
           @input="onSearch($event)"
         >
+      </slot>
+      <slot name="ui-vue-select-match-arrow">
+        <i class="arrow" :class="{ down: !isOpened, up: isOpened }"></i>
       </slot>
     </div>
     <div class="ui-vue-select-options" v-show="isOpened">

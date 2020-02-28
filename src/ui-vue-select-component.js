@@ -23,6 +23,9 @@ export default {
     },
     limit: {
       type: Number
+    },
+    value: {
+      type: null
     }
   },
   data() {
@@ -139,10 +142,24 @@ export default {
     }
   },
   mounted() {
-    if (this.isRequired && this.items.length > 0) {
+    if (this.value) {
       if (this.multiple) {
-        this.selected = new Set([this.items[0]]);
+        this.value.forEach(item => {
+          this.items.some((spec, index) => {
+            if (Object.entries(spec).toString() === Object.entries(item).toString()) {
+              this.selected.add(spec);
+            }
+          });
+        });
+        this.$forceUpdate();
+      } else {
+        this.selected = this.value;
+      }
+    } else if (this.isRequired && this.items.length > 0) {
+      if (this.multiple) {
+        this.selected.add(this.items[0]);
         this.$emit('change', Array.from(this.selected));
+        this.$forceUpdate();
       } else {
         this.selected = this.items[0];
         this.$emit('change', this.selected);

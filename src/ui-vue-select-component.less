@@ -3,6 +3,25 @@
   .hidden {
     display: none;
   }
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    &.up {
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+    }
+    
+    &.down {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
   .ui-vue-select-search {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

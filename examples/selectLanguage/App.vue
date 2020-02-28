@@ -43,7 +43,7 @@
           :name="`selectedLanguages`"
           :items="languages"
           :searchKeys="['title']"
-          :required="false"
+          :required="true"
           :multiple="true"
           :limit="2"
         >
@@ -63,7 +63,7 @@
 
         <div class="selected">
           {{language}}
-          <span v-for="(item, i) of languageSet" :key="`item-${i}`">
+          <span v-for="(item, i) of selectedLanguages" :key="`item-${i}`">
             {{item}}
           </span>
         </div>
@@ -82,7 +82,8 @@ export default {
         {locale: 'fr', flag: 'fr', title: 'French'},
         {locale: 'sp', flag: 'sp', title: 'Spanish'},
       ],
-      language: undefined,
+      language: {locale: 'en', flag: 'us', title: 'English'},
+      // selectedLanguages: [{locale: 'fr', flag: 'fr', title: 'French'},],
       selectedLanguages: undefined,
     };
   }
