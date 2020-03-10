@@ -78,9 +78,9 @@ export default {
     return {
       languages: [
         {locale: 'en', flag: 'us', title: 'English'},
-        {locale: 'ru', flag: 'ru', title: 'Russian'},
         {locale: 'fr', flag: 'fr', title: 'French'},
-        {locale: 'sp', flag: 'sp', title: 'Spanish'},
+        {locale: 'ru', flag: 'ru', title: 'Russian'},
+        {locale: 'sp', flag: 'es', title: 'Spanish'},
       ],
       language: {locale: 'en', flag: 'us', title: 'English'},
       // selectedLanguages: [{locale: 'fr', flag: 'fr', title: 'French'},],

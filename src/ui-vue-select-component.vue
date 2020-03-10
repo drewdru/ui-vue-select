@@ -3,20 +3,26 @@
     <div v-show="!isOpened" class="ui-vue-select-container"
         @click="openSelect()"
     >
-      <slot v-if="!multiple" name="ui-vue-select-match" :selected="selected">{{selected}}</slot>
-      <slot v-if="multiple" name="ui-vue-select-match" :selected="selected">
-        <span v-if="selected.size == 0">
-          &nbsp;
-        </span>
-        <span v-for="(item, i) of selected" :key="`item-${i}`">
-          {{item}}
-        </span>
-      </slot>
+      <div class="ui-vue-select-match-selected">
+        <slot v-if="!multiple" name="ui-vue-select-match" :selected="selected">
+            {{selected}}
+        </slot>
+        <slot v-if="multiple" name="ui-vue-select-match" :selected="selected">
+            <span v-if="selected.size == 0">
+              &nbsp;
+            </span>
+            <span v-for="(item, i) of selected" :key="`item-${i}`">
+              {{item}}
+            </span>
+        </slot>
+      </div>
       <slot name="ui-vue-select-match-arrow">
-        <i class="arrow" :class="{ down: !isOpened, up: isOpened }"></i>
+        <div class="ui-vue-select-match-arrow">
+          <i class="arrow" :class="{ down: !isOpened, up: isOpened }"></i>
+        </div>
       </slot>
     </div>
-    <div v-show="isOpened">
+    <div v-show="isOpened" class="ui-vue-select-match-open">
       <slot name="ui-vue-select-match-open" :selected="selected" :onSearch="onSearch" :searchText="searchText">
         <input
           v-model="searchText"
@@ -26,10 +32,12 @@
         >
       </slot>
       <slot name="ui-vue-select-match-arrow">
-        <i class="arrow" :class="{ down: !isOpened, up: isOpened }"></i>
+        <div class="ui-vue-select-match-arrow" @click="isOpened=false">
+          <i class="arrow" :class="{ down: !isOpened, up: isOpened }"></i>
+        </div>
       </slot>
     </div>
-    <div class="ui-vue-select-options" v-show="isOpened">
+    <div class="ui-vue-select-options" v-show="isOpened" @mouseleave="isOpened=false">
       <!-- TODO: <div @click="clearSelected()"> -->
       <div v-for="(item, i) in searchItems"
           :key="`item-${i}`"

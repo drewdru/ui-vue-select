@@ -27,6 +27,7 @@ export default {
     value: {
       type: null
     }
+    // TODO: form?
   },
   data() {
     return {
@@ -101,6 +102,7 @@ export default {
           .toLowerCase()
           .includes(filterValue);
       };
+      // TODO: select first
       return result.filter(filter);
     },
     selectItem(item) {
@@ -153,7 +155,11 @@ export default {
         });
         this.$forceUpdate();
       } else {
-        this.selected = this.value;
+        this.items.some((spec, index) => {
+          if (Object.entries(spec).toString() === Object.entries(this.value).toString()) {
+            this.selected = spec;
+          }
+        });
       }
     } else if (this.isRequired && this.items.length > 0) {
       if (this.multiple) {

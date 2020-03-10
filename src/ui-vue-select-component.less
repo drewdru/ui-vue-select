@@ -3,39 +3,52 @@
   .hidden {
     display: none;
   }
-  .arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
+  .ui-vue-select-match-arrow {
+    cursor: pointer;
     position: absolute;
-    top: 50%;
-    right: 20px;
-
-    &.up {
-      -webkit-transform: rotate(-135deg);
-      transform: rotate(-135deg);
-    }
-    
-    &.down {
-      -webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      position: absolute;
+      top: 40%;
+      right: 15px;
+  
+      &.up {
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
+      
+      &.down {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
     }
   }
-  .ui-vue-select-search {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 1px solid var(--shadow, #2c3e507F);
-    box-shadow: inset 0 0 1px var(--shadow, #2c3e507F);
-    background-color: var(--control, #ffffff);
-    color: var(--control-text, #2c3e50);
-    margin: 0;
-    padding: 10px;
-    border-radius: 4px;
-    width: 100%;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+  .ui-vue-select-match-open {
+    .ui-vue-select-search {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid var(--shadow, #2c3e507F);
+      box-shadow: inset 0 0 1px var(--shadow, #2c3e507F);
+      background-color: var(--control, #ffffff);
+      color: var(--control-text, #2c3e50);
+      margin: 0;
+      padding: 10px;
+      padding-right: 40px;
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
   }
   .ui-vue-select-container {
     border: 1px solid var(--shadow, #2c3e507F);
@@ -46,13 +59,16 @@
     box-sizing: border-box;
     padding: 10px;
     cursor: pointer;
+    .ui-vue-select-match-selected {
+      margin-right: 30px;
 
-    overflow-x: auto;
-    white-space: nowrap;
-    -ms-overflow-style: none;
-    -moz-overflow-style: none;
-    &::-webkit-scrollbar {
-      display: none;
+      overflow-x: auto;
+      white-space: nowrap;
+      -ms-overflow-style: none;
+      -moz-overflow-style: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
   .ui-vue-select-options {
