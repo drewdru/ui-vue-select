@@ -55,4 +55,4 @@
 </template>
 
 <script async lang="js" src="./ui-vue-select-component.js"></script>
-<style scoped lang="less" src="./ui-vue-select-component.less"></style>
+<style lang="less" src="./ui-vue-select-component.less"></style>
