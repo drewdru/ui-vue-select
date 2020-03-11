@@ -1,10 +1,10 @@
 {
   "name": "ui-vue-select",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "private": false,
   "description": "Vue select plugin",
   "main": "dist/ui-vue-select.js",
-  "types": "src/types/index.d.ts",
+  "types": "src/types/types.d.ts",
   "files": [
     "dist",
     "src",
