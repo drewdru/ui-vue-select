@@ -8,8 +8,7 @@
           :id="`language`"
           :name="`language`"
           :items="languages"
-          :searchKeys="['title']"
-          :required="false"
+          :isSearch="false"
         >
           <template #ui-vue-select-match="props">
             <!-- <flag :iso="props.selected.flag"></flag> -->

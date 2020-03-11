@@ -26,6 +26,10 @@ export default {
     },
     value: {
       type: null
+    },
+    isSearch: {
+      type: Boolean,
+      default: true
     }
     // TODO: form?
   },
@@ -72,7 +76,7 @@ export default {
     },
     searchFilter(items) {
       const result = items;
-      if (!this.searchText) {
+      if (!this.searchText || !this.isSearch) {
         return result;
       }
 

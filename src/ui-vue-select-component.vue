@@ -1,6 +1,6 @@
 <template>
   <div class="ui-vue-select">
-    <div v-show="!isOpened" class="ui-vue-select-container"
+    <div v-show="!isOpened || !isSearch" class="ui-vue-select-container"
         @click="openSelect()"
     >
       <div class="ui-vue-select-match-selected">
@@ -22,7 +22,7 @@
         </div>
       </slot>
     </div>
-    <div v-show="isOpened" class="ui-vue-select-match-open">
+    <div v-show="isOpened && isSearch" class="ui-vue-select-match-open">
       <slot name="ui-vue-select-match-open" :selected="selected" :onSearch="onSearch" :searchText="searchText">
         <input
           v-model="searchText"
