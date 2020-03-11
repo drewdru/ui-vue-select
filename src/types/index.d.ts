@@ -1,7 +1,7 @@
 import Vue, { PluginFunction } from 'vue';
 import { Store } from 'vuex';
 
-export class UiVueSelect {
+export default class UiVueSelect {
   constructor(options?: UiVueSelectOptions);
 
   static install(): PluginFunction<any>;
