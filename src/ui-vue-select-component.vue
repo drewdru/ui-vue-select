@@ -1,6 +1,8 @@
 <template>
   <div class="ui-vue-select">
-    <div v-show="!isOpened || !isSearch" class="ui-vue-select-container"
+    <div v-show="!isOpened || !isSearch"
+        class="ui-vue-select-container"
+        :class="{ open: isOpened }"
         @click="openSelect()"
     >
       <div class="ui-vue-select-match-selected">
